@@ -20,7 +20,37 @@ yarn add chapa-inline-hook
 
 To use the `useChapaPay` hook, import it into your React component and call it with the required parameters.
 
-### Example
+### Example-1
+
+```tsx
+import React from "react";
+import { useChapaPay } from "chapa-inline-hook";
+
+const PaymentPage = () => {
+  const { error, isPaymentSuccessful, isPaymentFailed, isPaymentClosed } =
+    useChapaPay({
+      amount: 500,
+      public_key: "your-public-key-here",
+      classIdName: "chapa-inline-form",
+    });
+
+  return (
+    <div>
+      <h1>Make a Payment</h1>
+      <div id="chapa-inline-form"></div>
+      {isPaymentSuccessful && <p>Payment was successful!</p>}
+      {isPaymentFailed && <p>Payment failed. Please try again.</p>}
+      {isPaymentClosed && <p>Payment window was closed.</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}{" "}
+      {/* Display error message */}
+    </div>
+  );
+};
+
+export default PaymentPage;
+```
+
+### Example-2-with-custome-style
 
 ```tsx
 import React from "react";
@@ -88,6 +118,10 @@ export function PaymentPage() {
   );
 }
 ```
+
+## Above example preview
+
+https://github.com/user-attachments/assets/b6b35826-9e5d-4903-b6d4-657613f7d570
 
 ## API
 
