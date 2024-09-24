@@ -91,7 +91,7 @@ const { isPaymentSuccessful, isPaymentFailed, isPaymentClosed, error } =
     classIdName: "pay-button-container",
   });
 
-isPaymentSuccessful && alert("paymnet sucessfull");
+isPaymentSuccessful && alert("Payment successful!");
 isPaymentFailed && alert(error);
-isPaymentClosed && alert("paymnet has closed");
+isPaymentClosed && alert("Payment has closed");
 ```
