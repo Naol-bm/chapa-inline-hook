@@ -119,7 +119,7 @@ export function PaymentPage() {
 }
 ```
 
-## Above example preview
+## Example 2 Preview
 
 https://github.com/user-attachments/assets/b6b35826-9e5d-4903-b6d4-657613f7d570
 
