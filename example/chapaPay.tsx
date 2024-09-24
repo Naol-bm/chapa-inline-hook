@@ -1,17 +1,6 @@
-import "./App.css";
-
 import { useEffect } from "react";
 import { useChapaPay } from "../src/hook/useChapaPay";
-
-function App() {
-  return (
-    <div>
-      <ChapaPay />
-    </div>
-  );
-}
-
-export default App;
+import React from "react";
 
 export function ChapaPay() {
   const { error, isPaymentSuccessful, isPaymentFailed, isPaymentClosed } =

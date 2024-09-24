@@ -304,7 +304,7 @@ export default class ChapaCheckout {
   }
 
   showLoading() {
-    document.getElementById("chapa-loading-container").style.display = "block";
+    document.getElementById("chapa-loading-container").style.display = "flex";
   }
 
   hideLoading() {

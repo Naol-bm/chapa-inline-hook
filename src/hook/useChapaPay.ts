@@ -13,6 +13,8 @@ interface ChapaPayProps {
   callbackUrl?: string;
   returnUrl?: string;
   styles?: string;
+  tx_ref?: string;
+  showPaymentMethodsNames?: boolean;
 }
 
 export function useChapaPay({
@@ -22,9 +24,11 @@ export function useChapaPay({
   currency = "ETB",
   availablePaymentMethods = ["telebirr", "cbebirr", "ebirr", "mpesa", "chapa"],
   buttonText = `Pay ${amount} Birr`,
-  callbackUrl = "https://yourdomain.com/callback",
-  returnUrl = "https://yourdomain.com/success",
-  styles = '',
+  callbackUrl,
+  returnUrl,
+  styles,
+  showPaymentMethodsNames = true,
+  tx_ref,
 }: ChapaPayProps) {
   const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
   const [isPaymentFailed, setIsPaymentFailed] = useState(false);
@@ -43,6 +47,8 @@ export function useChapaPay({
       },
       callbackUrl: callbackUrl,
       returnUrl: returnUrl,
+      tx_ref: tx_ref,
+      showPaymentMethodsNames: showPaymentMethodsNames,
       onSuccessfulPayment: () => {
         setIsPaymentSuccessful(true);
         setIsPaymentFailed(false);
@@ -58,7 +64,8 @@ export function useChapaPay({
         setIsPaymentClosed(true);
         setIsPaymentSuccessful(false);
         setIsPaymentFailed(false);
-      },
+      }
+
     });
 
     chapa.initialize(classIdName);
