@@ -72,12 +72,12 @@ This hook sets up the Chapa payment process and provides payment status indicato
 
 #### Returns
 
-| Return Value          | Type      | Description                                 |
-| --------------------- | --------- | ------------------------------------------- | ------------------------------------------------------------------ |
-| `isPaymentSuccessful` | `boolean` | Indicates if the payment was successful.    |
-| `isPaymentFailed`     | `boolean` | Indicates if the payment has failed.        |
-| `isPaymentClosed`     | `boolean` | Indicates if the payment window was closed. |
-| `error`               | `string   | null`                                       | Contains error messages if the payment fails or encounters issues. |
+| Return Value          | Type      | Description                                   |
+| --------------------- | --------- | --------------------------------------------- |
+| `isPaymentSuccessful` | `boolean` | Indicates if the payment was successful.      |
+| `isPaymentFailed`     | `boolean` | Indicates if the payment has failed.          |
+| `isPaymentClosed`     | `boolean` | Indicates if the payment window was closed.   |
+| `error`               | `string`  | Contains error messages if the payment fails. |
 
 ### Example of Custom Callbacks
 
