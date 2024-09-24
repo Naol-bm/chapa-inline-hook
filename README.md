@@ -81,7 +81,7 @@ This hook sets up the Chapa payment process and provides payment status indicato
 
 ### Example of Custom Callbacks
 
-If you want to handle payment events, you can include them in the parameters:
+If you want to handle payment events, you can use returned values:
 
 ```tsx
 const { isPaymentSuccessful, isPaymentFailed, isPaymentClosed, error } =
@@ -89,14 +89,9 @@ const { isPaymentSuccessful, isPaymentFailed, isPaymentClosed, error } =
     amount: 500,
     public_key: "your-public-key-here",
     classIdName: "pay-button-container",
-    onSuccessfulPayment: () => {
-      console.log("Payment was successful!");
-    },
-    onPaymentFailure: (error) => {
-      console.error("Payment failed:", error);
-    },
-    onClose: () => {
-      console.log("Payment window closed");
-    },
   });
+
+isPaymentSuccessful && alert("paymnet sucessfull");
+isPaymentFailed && alert(error);
+isPaymentClosed && alert("paymnet has closed");
 ```
