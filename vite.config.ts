@@ -12,7 +12,7 @@ export default defineConfig({
       name: "chapa-inline-hook",
       //A function that generates the output file
       //name for different formats during the build
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => `index.${format}.ts`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
