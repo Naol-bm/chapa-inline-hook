@@ -14,10 +14,12 @@ function App() {
 export default App;
 
 export function ChapaPay() {
+  const chapa_poublic_key = import.meta.env.CHAPA_PUBLIC_KEY;
+
   const { error, isPaymentSuccessful, isPaymentFailed, isPaymentClosed } =
     useChapaPay({
       amount: 200,
-      public_key: "your_chapa_public_key",
+      public_key: chapa_poublic_key,
       classIdName: "chapa-inline-form",
       styles: `
             .chapa-pay-button:hover { 
@@ -70,7 +72,7 @@ export function ChapaPay() {
         }}
         id="chapa-inline-form"
       ></div>
-      {/* {error} */}
+      {error}
     </div>
   );
 }
