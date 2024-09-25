@@ -24,11 +24,11 @@ export function useChapaPay({
   currency = "ETB",
   availablePaymentMethods = ["telebirr", "cbebirr", "ebirr", "mpesa", "chapa"],
   buttonText = `Pay ${amount} Birr`,
-  callbackUrl,
-  returnUrl,
-  styles,
+  callbackUrl = '',
+  returnUrl = '',
+  styles = '',
   showPaymentMethodsNames = true,
-  tx_ref,
+  tx_ref = '',
 }: ChapaPayProps) {
   const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
   const [isPaymentFailed, setIsPaymentFailed] = useState(false);
