@@ -1,7 +1,7 @@
 {
   "name": "chapa-inline-hook",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "chapa-inline-hook is a React hook for integrating the Chapa payment gateway into your React applications.",
   "main": "dist/index.umd.ts",
   "module": "dist/index.es.ts",
